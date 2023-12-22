@@ -21,22 +21,20 @@ class Cloud {
     }
     this.width = width;
 
-    x = width;
+    x = 550;
     y = (int) (Math.random() * (width / 2) + 50);
-    xSpeed = (int) (Math.random() * 3 + 1);
+    xSpeed = 1;
     size = (int) (Math.random() * 5 + 2);
   }
-
+  public int getX(){
+    return x;
+  }
+  public int getSize(){
+    return size;
+  }
   public void moveAndDraw(Graphics window) {
     x -= xSpeed;
-    if (x < -1 * 60 * size) {
-      x = width;
-      y = (int) (Math.random() * (width / 2) + 50);
-      xSpeed = (int) (Math.random() * 3 + 1);
-      size = (int) (Math.random() * 5 + 2);
-    } else {
       window.drawImage(image, x, y, 60 * size, 40 * size, null);
-    }
   }
 
 }
