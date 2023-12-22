@@ -221,6 +221,8 @@ public class Runner extends Canvas implements KeyListener, Runnable{
         temp = 0;
       }*/
       graphToBack.drawString("Due to your academic achievements, You were admitted to: " + collegeList[temp], 10, 60);
+      graphToBack.drawString("Stop and Run to play again", 10, 80);
+
       
       if (highScore.rank<=score.rank) {
         System.out.println("Here");
