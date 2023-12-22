@@ -10,20 +10,25 @@ public class SportsCoin extends Coin{
 
   public SportsCoin(int startX, int startY, int speed) {
     super(startX,startY,speed,false);
-    if(Math.random()>0.5){
-    try {
-      URL url = getClass().getResource("basketball.png");
-      image = ImageIO.read(url);
-    } catch (Exception e) {
-    }
-  }
-  else{
-    try {
-      URL url = getClass().getResource("baseball.png");
-      image = ImageIO.read(url);
-    } catch (Exception e) {
-    }
-    }
+    image=coinType();
     setImage(image);
+  }
+  public Image coinType(){
+
+      if(Math.random()>0.5){
+      try {
+        URL url = getClass().getResource("basketball.png");
+        return ImageIO.read(url);
+      } catch (Exception e) {
+      }
+    }
+    else{
+      try {
+        URL url = getClass().getResource("baseball.png");
+        return ImageIO.read(url);
+      } catch (Exception e) {
+      }
+      }
+    return image;
   }
 }
