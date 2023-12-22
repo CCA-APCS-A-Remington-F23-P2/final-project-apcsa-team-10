@@ -113,7 +113,7 @@ public class Runner extends Canvas implements KeyListener, Runnable{
     graphToBack.fillRect(0, floorY, width, height);
     graphToBack.setColor(Color.black);
     score.draw(graphToBack);
-      graphToBack.drawString("Best College: " + (highScore.college), 100,100);
+      graphToBack.drawString("Best College: " + (highScore.college), 10,80);
     // My Jump Logic
     player.setY(player.getY() + player.getYVel());
     if(count++%5 == 1){
