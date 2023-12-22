@@ -50,12 +50,10 @@ public class Student extends Block implements Collideable<Block>{
     }
   }
   public boolean didCollideLeft(Block obj){
-    return getX() <= obj.getX() + obj.getWidth() && getX() >= obj.getX()
-      && getY() + getHeight() >= obj.getY() && getY() <= obj.getY() + obj.getHeight();
+    return getX() <= obj.getX() + obj.getWidth() && getX() >= obj.getX() && getY() + getHeight() >= obj.getY() && getY() <= obj.getY() + obj.getHeight();
   }
   public boolean didCollideRight(Block obj){
-    return getX() +getWidth()>= obj.getX() && getX() + getWidth() <= obj.getX() + obj.getWidth()
-      && getY() + getHeight() >= obj.getY() && getY() <= obj.getY() + obj.getHeight();
+    return getX() +getWidth()>= obj.getX() && getX() + getWidth() <= obj.getX() + obj.getWidth() && getY() + getHeight() >= obj.getY() && getY() <= obj.getY() + obj.getHeight();
   }
   public boolean didCollide(Block obj){
     return didCollideLeft(obj) || didCollideRight(obj);
