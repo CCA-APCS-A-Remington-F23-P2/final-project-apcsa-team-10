@@ -5,9 +5,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 
-class Cloud {
-  private int y;
-  private int x;
+class Cloud extends Block{
   private int xSpeed;
   private Image image;
   private int width;
@@ -21,20 +19,19 @@ class Cloud {
     }
     this.width = width;
 
-    x = 550;
-    y = (int) (Math.random() * (width / 2) + 50);
+    this.setX(550);
+    this.setY((int) (Math.random() * (width / 2) + 50));
     xSpeed = 1;
     size = (int) (Math.random() * 5 + 2);
   }
-  public int getX(){
-    return x;
-  }
-  public int getSize(){
+
+  public int getSize() {
     return size;
   }
+
   public void moveAndDraw(Graphics window) {
-    x -= xSpeed;
-      window.drawImage(image, x, y, 60 * size, 40 * size, null);
+    this.setX(this.getX()-xSpeed);
+    window.drawImage(image, this.getX(), this.getY(), 60 * size, 40 * size, null);
   }
 
 }
