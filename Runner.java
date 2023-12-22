@@ -207,21 +207,20 @@ public class Runner extends Canvas implements KeyListener, Runnable{
       graphToBack.setColor(Color.black);
       graphToBack.fillRect(0,0,width,height);
       graphToBack.setColor(Color.cyan);
-      graphToBack.drawString("GPA: " + GPA, 10, 20);
-      graphToBack.drawString("Extracurriculars participated in: " + score.getExtracurricularCoins(), 10, 40);
+      Font font = new Font("Times New Roman", Font.PLAIN, 20);
+      graphToBack.setFont(font);
+      graphToBack.drawString("GPA: " + GPA, 10, 30);
+      graphToBack.drawString("Extracurriculars participated in: " + score.getExtracurricularCoins(), 10, 60);
       int combinedGPA = (int) (GPA+ExtraGPA);
       score.rank=combinedGPA;
       score.college=collegeList[combinedGPA];
-      subtract = 5-(numTeachers/8);
-      if(subtract<0){
-        subtract = 0;
-      }
       int temp = combinedGPA/*-subtract*/;
       /*if(temp<0){
         temp = 0;
       }*/
-      graphToBack.drawString("Due to your academic achievements, You were admitted to: " + collegeList[temp], 10, 60);
-      graphToBack.drawString("Stop and Run to play again", 10, 80);
+      graphToBack.drawString("Due to your academic achievements, You were admitted to: ", 10, 90);
+      graphToBack.drawString(collegeList[temp],10,120);
+      graphToBack.drawString("Stop and Run to play again", 10, 150);
 
       
       if (highScore.rank<=score.rank) {
