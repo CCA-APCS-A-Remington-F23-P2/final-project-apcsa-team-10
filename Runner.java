@@ -80,13 +80,6 @@ public class Runner extends Canvas implements KeyListener, Runnable{
     lastReward = System.currentTimeMillis();
     lastCloud = System.currentTimeMillis();
     
-
-    /*
-      for(int i = 0; i < 10; i++) {
-        clouds.add(new Cloud(width));
-      } 
-    */
-
     this.addKeyListener(this);
     new Thread(this).start();
 
